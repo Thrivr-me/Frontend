@@ -12,7 +12,7 @@ const Hero = () => {
   const animationRef = useRef(null);
 
   return (
-    <section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32">
+    <section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32 mb-[200rem]">
       <Element name="hero">
         <div className="container">
           <div className="relative z-2 max-w-512 max-lg:max-w-388">
@@ -36,7 +36,8 @@ const Hero = () => {
               className="size-1230 max-lg:h-auto"
               alt="hero"
             />*/}
-          <Lottie lottieRef={animationRef} animationData={animationData} className="size-1230 max-lg:h-auto" />
+
+          <Lottie lottieRef={animationRef} animationData={animationData} className="scale-[0.534] size-1230 max-lg:h-auto" />
           </div>
         </div>
       </Element>
