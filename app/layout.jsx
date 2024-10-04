@@ -1,7 +1,9 @@
 import localFont from "next/font/local";
 import { Rubik } from "next/font/google";
 import "./globals.css";  // Global styles
-import Navbar from "@components/Navbar";  // Simplified import using alias
+import { navItems } from "@/data";
+import FloatingNav from "@/components/ui/FloatingNavbar";
+
 
 // Local fonts
 const geistSans = localFont({
@@ -29,7 +31,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${rubik.variable} antialiased`}
       >
-        <Navbar />  {/* Navbar at the top */}
+        <FloatingNav navItems={navItems} />  {/* Navbar at the top */}
         {children}  {/* Page content */}
       </body>
     </html>
