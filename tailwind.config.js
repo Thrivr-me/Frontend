@@ -1,6 +1,20 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],  theme: {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}", 
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}", 
+    "./components/**/*.{js,ts,jsx,tsx,mdx}", 
+    "./app/**/*.{js,ts,jsx,tsx,mdx}"
+  ],
+  darkMode: "class", // from Aceternity UI config
+  theme: {
     extend: {
       colors: {
         p1: "#71e60b", // Main primary color
@@ -11,7 +25,7 @@ module.exports = {
         s1: "#131517", // General background color (dark)
         s2: "#1c1e20", // Secondary background (e.g., card background)
         s3: "#2c2e30", // Tertiary background (subcards)
-        s4: "#00a93b", // Dark primary or border accent (similar to 'primary-dark')
+        s4: "#00a93b", // Dark primary or border accent
         s5: "#59b9e2", // Info color for accents
         black: {
           DEFAULT: "#000000", // Default black color
@@ -22,9 +36,9 @@ module.exports = {
         accent: "#a599c6", // Accent color (purple-ish)
       },
       boxShadow: {
-        100: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b", // Updated to match your 's4' dark primary color
-        200: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 4px 10px #49d793", // Success color
-        300: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b", // Updated to match 's4'
+        100: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b",
+        200: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 4px 10px #49d793",
+        300: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b",
         400: "inset 0px 2px 4px 0 rgba(255, 255, 255, 0.05)",
         500: "0px 16px 24px rgba(0, 0, 0, 0.25), 0px -14px 48px rgba(40, 51, 111, 0.7)", // Darker shadows for depth
       },
@@ -85,5 +99,17 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    addVariablesForColors, // From Aceternity UI
+  ],
 };
+
+// Function for Aceternity UI
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
+
+  addBase({
+    ":root": newVars,
+  });
+}
