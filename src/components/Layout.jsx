@@ -1,16 +1,13 @@
 import { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
-import Navbar from './'
-import Footer from './'
+import { Navbar, Footer } from './'
 
 
 const Layout = () => {
 	return (
-		<section className="w-full h-screen">
+		<section className="overflow-x-hidden">
 			<Navbar />
-			<div className="">
 				<Outlet />
-			</div>
 			<Footer />
 		</section>
 	)
