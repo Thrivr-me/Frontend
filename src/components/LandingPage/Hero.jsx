@@ -1,11 +1,16 @@
+import { useRef } from 'react'
 import { Element, Link as LinkScroll } from "react-scroll";
 import { Button } from '../'
 import { BackgroundBeams } from "../ui/background-beams";
 import { cn } from "../../lib/utils";
 import { Spotlight } from "../ui/Spotlight";
 import { motion } from "framer-motion";
+import Lottie from 'lottie-react';
+import animationData from '../../assets/C1uvKgNEqy.json'
 
 const Hero = () => {
+  const animationRef = useRef(null);
+
   return (
     <section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32">
       <Element name="hero">
@@ -26,11 +31,12 @@ const Hero = () => {
           </div>
 
           <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] pointer-events-none hero-img_res">
-            <img
+            {/*<img
               src="/images/hero.png"
               className="size-1230 max-lg:h-auto"
               alt="hero"
-            />
+            />*/}
+          <Lottie lottieRef={animationRef} animationData={animationData} className="size-1230 max-lg:h-auto" />
           </div>
         </div>
       </Element>
