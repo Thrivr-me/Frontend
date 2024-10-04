@@ -1,10 +1,18 @@
-import React from 'react'
+import { useState } from 'react'
+import { Outlet, Link } from 'react-router-dom'
+import Navbar from './'
+import Footer from './
+
 
 const Layout = () => {
 	return (
-		<div>
-			
-		</div>
+		<section className="w-full h-screen">
+			<Navbar />
+			<div className="">
+				<Outlet />
+			</div>
+			<Footer />
+		</section>
 	)
 }
 
