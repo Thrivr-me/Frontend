@@ -3,6 +3,7 @@ import { Button } from '../'
 import { BackgroundBeams } from "../ui/background-beams";
 import { cn } from "../../lib/utils";
 import { Spotlight } from "../ui/Spotlight";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
