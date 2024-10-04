@@ -1,9 +1,10 @@
 import React from 'react'
+import { Hero } from '../components/'
 
 const LandingPage = () => {
 	return (
-		<div>
-			j
+		<div className="overflow-hidden">
+			<Hero />
 		</div>
 	)
 }
