@@ -70,7 +70,7 @@ const Navbar = () => {
                     )}
                   >
                     <img
-                      src="/images/xora.svg"
+                      src="/images/logo2.svg"
                       width={160}
                       height={55}
                       alt="logo"

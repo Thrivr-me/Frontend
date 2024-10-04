@@ -1,30 +1,32 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],  theme: {
     extend: {
       colors: {
-        p1: "#2EF2FF",
-        p2: "#3C52D9",
-        p3: "#C8EA80",
-        p4: "#EAEDFF",
-        p5: "#C4CBF5",
-        s1: "#080D27",
-        s2: "#0C1838",
-        s3: "#334679",
-        s4: "#1959AD",
-        s5: "#263466",
+        p1: "#71e60b", // Main primary color
+        p2: "#00a93b", // Darker primary color
+        p3: "#49d793", // Success color
+        p4: "#b7b7b8", // Light gray
+        p5: "#7b7d85", // Mid-gray
+        s1: "#131517", // General background color (dark)
+        s2: "#1c1e20", // Secondary background (e.g., card background)
+        s3: "#2c2e30", // Tertiary background (subcards)
+        s4: "#00a93b", // Dark primary or border accent (similar to 'primary-dark')
+        s5: "#59b9e2", // Info color for accents
         black: {
-          DEFAULT: "#000000",
-          100: "#05091D",
+          DEFAULT: "#000000", // Default black color
+          100: "#05091D", // Slightly lighter black
         },
+        danger: "#e65244", // Danger color for alerts
+        warning: "#fc8802", // Warning color for attention
+        accent: "#a599c6", // Accent color (purple-ish)
       },
       boxShadow: {
-        100: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #1959AD",
-        200: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 4px 10px #3391FF",
-        300: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #1959AD",
+        100: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b", // Updated to match your 's4' dark primary color
+        200: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 4px 10px #49d793", // Success color
+        300: "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25), inset 0px 3px 6px #00a93b", // Updated to match 's4'
         400: "inset 0px 2px 4px 0 rgba(255, 255, 255, 0.05)",
-        500: "0px 16px 24px rgba(0, 0, 0, 0.25), 0px -14px 48px rgba(40, 51, 111, 0.7)",
+        500: "0px 16px 24px rgba(0, 0, 0, 0.25), 0px -14px 48px rgba(40, 51, 111, 0.7)", // Darker shadows for depth
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
