@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import Navbar from './'
-import Footer from './
+import Footer from './'
 
 
 const Layout = () => {
